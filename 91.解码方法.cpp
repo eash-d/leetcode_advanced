@@ -4,6 +4,20 @@
  * [91] 解码方法
  */
 
+/* 
+
+-> val = s[i-1] * 10 + s[i] > 26
+    ex: s = "12", val = 1*10 + 2 = int(12)
+
+-> if (s[i] == 0) combine with front, to be one num;
+-> if (s[i-1] * 10 + s[i] > 26) return 0;
+    ex: "130": [1,30] x 
+               [13,0] x
+-> if (s[i]==0 and s[i-1]==0) return 0;
+    ex: "100": [10,0] x
+
+*/
+
 // @lc code=start
 # include <iostream>
 # include <string>
@@ -77,16 +91,3 @@ public:
 };
 // @lc code=end
 
-/* 
-
--> val = s[i-1] * 10 + s[i] > 26
-    ex: s = "12", val = 1*10 + 2 = int(12)
-
--> if (s[i] == 0) combine with front, to be one num;
--> if (s[i-1] * 10 + s[i] > 26) return 0;
-    ex: "130": [1,30] x 
-               [13,0] x
--> if (s[i]==0 and s[i-1]==0) return 0;
-    ex: "100": [10,0] x
-
-*/
